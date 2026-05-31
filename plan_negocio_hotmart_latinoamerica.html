@@ -1,0 +1,568 @@
+
+<h2 class="sr-only">Plan completo de negocio digital en Hotmart para Latinoamérica: 7 fases desde investigación de mercado hasta escalar a $1,000/mes</h2>
+
+<style>
+:root { --accent: #7F77DD; --accent-light: #EEEDFE; --accent-dark: #3C3489; }
+.nav { display:flex; gap:6px; flex-wrap:wrap; margin:0 0 20px; }
+.nav button { font-size:12px; padding:6px 12px; border-radius:20px; border:0.5px solid var(--color-border-secondary); background:var(--color-background-secondary); color:var(--color-text-secondary); cursor:pointer; transition:all .2s; font-weight:400; }
+.nav button.active { background:var(--accent-light); border-color:var(--accent); color:var(--accent-dark); font-weight:500; }
+.phase { display:none; }
+.phase.active { display:block; }
+.badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:10px; font-weight:500; }
+.high { background:#EAF3DE; color:#3B6D11; }
+.med { background:#FAEEDA; color:#854F0B; }
+.low { background:#FCEBEB; color:#A32D2D; }
+.tbl { width:100%; border-collapse:collapse; font-size:12px; margin:12px 0; }
+.tbl th { background:var(--color-background-secondary); color:var(--color-text-secondary); padding:8px 6px; text-align:left; font-weight:500; border-bottom:0.5px solid var(--color-border-secondary); font-size:11px; }
+.tbl td { padding:7px 6px; border-bottom:0.5px solid var(--color-border-tertiary); vertical-align:top; line-height:1.4; }
+.tbl tr:hover td { background:var(--color-background-secondary); }
+.card { background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:16px 18px; margin:10px 0; }
+.card h3 { font-size:15px; font-weight:500; margin:0 0 10px; color:var(--color-text-primary); }
+.card .meta { font-size:12px; color:var(--color-text-secondary); margin:4px 0; }
+.rank { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:var(--accent-light); color:var(--accent-dark); font-size:12px; font-weight:500; margin-right:8px; flex-shrink:0; }
+.tag { display:inline-block; font-size:11px; padding:2px 7px; border-radius:6px; background:var(--color-background-secondary); color:var(--color-text-secondary); margin:2px; border:0.5px solid var(--color-border-tertiary); }
+.section-title { font-size:13px; font-weight:500; color:var(--color-text-secondary); margin:16px 0 8px; text-transform:uppercase; letter-spacing:.04em; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+.mini-card { background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:10px 12px; border:0.5px solid var(--color-border-tertiary); }
+.mini-card .num { font-size:20px; font-weight:500; color:var(--accent-dark); }
+.mini-card .lbl { font-size:11px; color:var(--color-text-secondary); margin-top:2px; }
+.step { display:flex; gap:12px; margin:10px 0; align-items:flex-start; }
+.step-num { width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:500; flex-shrink:0; margin-top:2px; }
+.step-body h4 { font-size:14px; font-weight:500; margin:0 0 3px; }
+.step-body p { font-size:13px; color:var(--color-text-secondary); margin:0; line-height:1.5; }
+.week { border-left:2px solid var(--accent); padding:0 0 16px 16px; margin:0 0 4px 14px; }
+.week h4 { font-size:14px; font-weight:500; margin:0 0 6px; }
+.day-row { display:flex; gap:8px; margin:4px 0; align-items:flex-start; font-size:12px; }
+.day-lbl { min-width:28px; font-weight:500; color:var(--accent-dark); }
+.script-box { background:var(--color-background-secondary); border-left:3px solid var(--accent); border-radius:0 var(--border-radius-md) var(--border-radius-md) 0; padding:10px 14px; margin:8px 0; font-size:13px; line-height:1.6; font-style:italic; color:var(--color-text-secondary); }
+.pill-list { display:flex; flex-wrap:wrap; gap:4px; margin:6px 0; }
+.highlight-box { background:var(--accent-light); border:0.5px solid var(--accent); border-radius:var(--border-radius-md); padding:12px 16px; margin:10px 0; }
+.highlight-box p { font-size:13px; color:var(--accent-dark); margin:0; line-height:1.5; }
+.price-big { font-size:28px; font-weight:500; color:var(--accent-dark); }
+.accordion-btn { width:100%; text-align:left; background:var(--color-background-secondary); border:0.5px solid var(--color-border-secondary); border-radius:var(--border-radius-md); padding:10px 14px; cursor:pointer; font-size:13px; font-weight:500; color:var(--color-text-primary); margin:4px 0; display:flex; justify-content:space-between; align-items:center; }
+.accordion-content { display:none; padding:12px 14px; background:var(--color-background-primary); border:0.5px solid var(--color-border-tertiary); border-radius:0 0 var(--border-radius-md) var(--border-radius-md); margin-top:-4px; font-size:13px; line-height:1.6; }
+.accordion-content.open { display:block; }
+</style>
+
+<div class="nav" id="mainNav">
+  <button class="active" onclick="showPhase(0)">🔍 Fase 1: Mercado</button>
+  <button onclick="showPhase(1)">⭐ Fase 2: Top 10</button>
+  <button onclick="showPhase(2)">📦 Fase 3: Productos</button>
+  <button onclick="showPhase(3)">📱 Fase 4: Marketing</button>
+  <button onclick="showPhase(4)">⚙️ Fase 5: Automatización</button>
+  <button onclick="showPhase(5)">📅 Fase 6: Plan 30 días</button>
+  <button onclick="showPhase(6)">🏆 Fase 7: #1 Oportunidad</button>
+</div>
+
+<!-- FASE 1 -->
+<div class="phase active" id="phase0">
+  <div style="margin-bottom:12px">
+    <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 8px">Los 30 servicios digitales más demandados en Latinoamérica. Filtra por nivel de demanda:</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="accordion-btn" style="width:auto;padding:4px 12px;font-size:12px" onclick="filterTable('all')">Todos</button>
+      <button class="accordion-btn" style="width:auto;padding:4px 12px;font-size:12px;background:#EAF3DE;border-color:#639922;color:#3B6D11" onclick="filterTable('Alta')">Alta demanda</button>
+      <button class="accordion-btn" style="width:auto;padding:4px 12px;font-size:12px;background:#FAEEDA;border-color:#BA7517;color:#854F0B" onclick="filterTable('Media')">Media demanda</button>
+    </div>
+  </div>
+  <div style="overflow-x:auto">
+  <table class="tbl" id="marketTable">
+    <thead>
+      <tr>
+        <th>#</th><th>Servicio</th><th>Problema que resuelve</th><th>Urgencia</th><th>Demanda</th><th>Competencia</th><th>Público</th><th>Ticket</th><th>Formatos posibles</th>
+      </tr>
+    </thead>
+    <tbody id="marketBody"></tbody>
+  </table>
+  </div>
+</div>
+
+<!-- FASE 2 -->
+<div class="phase" id="phase1">
+  <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 14px">Los 10 mejores considerando: alta demanda, baja/media competencia, fácil creación, bajo costo y potencial para principiantes.</p>
+  <div id="top10Container"></div>
+</div>
+
+<!-- FASE 3 -->
+<div class="phase" id="phase2">
+  <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 14px">Detalle completo de creación para cada uno de los 10 productos seleccionados.</p>
+  <div id="productosContainer"></div>
+</div>
+
+<!-- FASE 4 -->
+<div class="phase" id="phase3">
+  <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 10px">Selecciona un producto para ver su estrategia completa de contenido sin rostro:</p>
+  <div class="nav" id="productNav" style="margin-bottom:16px"></div>
+  <div id="marketingContainer"></div>
+</div>
+
+<!-- FASE 5 -->
+<div class="phase" id="phase4">
+  <div class="highlight-box" style="margin-bottom:16px">
+    <p><strong>Sistema 100% automatizado:</strong> Video → Perfil → Enlace → Página de ventas → Compra en Hotmart → Entrega automática. Todo gratis o con inversión mínima.</p>
+  </div>
+  <div id="autoContainer"></div>
+</div>
+
+<!-- FASE 6 -->
+<div class="phase" id="phase5">
+  <div class="grid3" style="margin-bottom:16px">
+    <div class="mini-card"><div class="num">30</div><div class="lbl">días de contenido</div></div>
+    <div class="mini-card"><div class="num">90+</div><div class="lbl">publicaciones planificadas</div></div>
+    <div class="mini-card"><div class="num">$500</div><div class="lbl">meta mes 1</div></div>
+  </div>
+  <div id="planContainer"></div>
+</div>
+
+<!-- FASE 7 -->
+<div class="phase" id="phase6">
+  <div id="finalContainer"></div>
+</div>
+
+<script>
+const services = [
+  {n:"ChatGPT & IA para negocios",prob:"No saben usar IA para trabajar más rápido",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Emprendedores 25-45",tick:"$17-47",fmt:"Curso, Prompts, Ebook"},
+  {n:"Edición de videos con CapCut",prob:"Quieren crecer en TikTok sin saber editar",urg:"Alta",dem:"Alta",comp:"Media",pub:"Creadores 18-35",tick:"$9-27",fmt:"Curso, Plantillas, Kit"},
+  {n:"Diseño en Canva Pro",prob:"Necesitan contenido visual profesional sin pagar diseñador",urg:"Alta",dem:"Alta",comp:"Media",pub:"Emprendedores, Coaches",tick:"$9-37",fmt:"Plantillas, Kit, Curso"},
+  {n:"Copywriting con IA",prob:"No saben escribir textos que vendan",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Emprendedores, Marketers",tick:"$17-57",fmt:"Prompts, Ebook, Curso"},
+  {n:"Instagram para negocios",prob:"No consiguen clientes desde Instagram",urg:"Alta",dem:"Alta",comp:"Alta",pub:"Emprendedores 20-40",tick:"$17-47",fmt:"Curso, Plantillas, Membresía"},
+  {n:"TikTok sin mostrar rostro",prob:"Quieren ingresos en TikTok sin aparecer",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Mamás, empleados 22-40",tick:"$17-57",fmt:"Curso, Ebook, Kit"},
+  {n:"Automatización con n8n/Make",prob:"Pierden horas en tareas repetitivas",urg:"Media",dem:"Alta",comp:"Baja",pub:"Freelancers, PYMEs",tick:"$27-97",fmt:"Automatización, Curso, Kit"},
+  {n:"Email marketing con Brevo/Mailchimp",prob:"No tienen lista de clientes propia",urg:"Media",dem:"Alta",comp:"Media",pub:"Emprendedores 25-45",tick:"$17-47",fmt:"Curso, Plantillas, Kit"},
+  {n:"Ventas por WhatsApp",prob:"No cierran ventas por mensaje",urg:"Alta",dem:"Alta",comp:"Media",pub:"Vendedores, Coaches",tick:"$9-37",fmt:"Ebook, Plantillas, Curso"},
+  {n:"Afiliados con Hotmart/Monetizze",prob:"Buscan ingresos pasivos sin crear producto propio",urg:"Alta",dem:"Alta",comp:"Alta",pub:"Principiantes 20-40",tick:"$9-27",fmt:"Ebook, Curso, Membresía"},
+  {n:"Freelancing en Fiverr/Workana",prob:"No saben conseguir clientes online",urg:"Alta",dem:"Alta",comp:"Media",pub:"Profesionales 20-35",tick:"$17-47",fmt:"Ebook, Curso, Kit"},
+  {n:"Notion para productividad",prob:"Viven desorganizados y sin sistema",urg:"Media",dem:"Alta",comp:"Media",pub:"Estudiantes, Profesionales",tick:"$7-27",fmt:"Plantillas, Kit, Curso"},
+  {n:"Gestión de redes con Buffer/Meta Suite",prob:"No tienen tiempo para publicar todos los días",urg:"Media",dem:"Alta",comp:"Baja",pub:"Emprendedores, Agencias",tick:"$9-37",fmt:"Automatización, Curso"},
+  {n:"SEO básico con IA",prob:"Su negocio no aparece en Google",urg:"Media",dem:"Alta",comp:"Alta",pub:"Dueños de negocios 30-50",tick:"$17-67",fmt:"Curso, Ebook, Kit"},
+  {n:"Prompts para crear contenido",prob:"No saben qué publicar ni cómo escribirlo",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Creadores, Emprendedores",tick:"$7-27",fmt:"Prompts, Kit, Membresía"},
+  {n:"Facturación electrónica LATAM",prob:"Obligaciones fiscales complejas para PYMEs",urg:"Alta",dem:"Media",comp:"Baja",pub:"Dueños de negocio LATAM",tick:"$9-27",fmt:"Ebook, Curso, Kit"},
+  {n:"Dropshipping en Shopify/TiendaNube",prob:"Quieren vender sin inventario",urg:"Media",dem:"Alta",comp:"Alta",pub:"Emprendedores 20-40",tick:"$17-67",fmt:"Curso, Plantillas, Ebook"},
+  {n:"Minimalismo digital y productividad",prob:"Distracción digital y baja productividad",urg:"Media",dem:"Media",comp:"Baja",pub:"Profesionales 25-40",tick:"$9-27",fmt:"Ebook, Plantillas, Membresía"},
+  {n:"LinkedIn personal branding",prob:"No tienen presencia profesional digital",urg:"Media",dem:"Media",comp:"Baja",pub:"Profesionales 25-45",tick:"$17-47",fmt:"Ebook, Plantillas, Curso"},
+  {n:"Chatbots con ManyChat",prob:"Responden manualmente cientos de mensajes",urg:"Media",dem:"Media",comp:"Baja",pub:"Emprendedores, E-commerce",tick:"$17-57",fmt:"Automatización, Curso"},
+  {n:"YouTube automatizado con IA",prob:"Quieren ingresos de YouTube sin grabar",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Creadores 20-40",tick:"$17-57",fmt:"Curso, Ebook, Prompts"},
+  {n:"Inglés para negocios con IA",prob:"El idioma les limita oportunidades laborales",urg:"Alta",dem:"Alta",comp:"Alta",pub:"Profesionales 20-40",tick:"$9-47",fmt:"Curso, Prompts, Membresía"},
+  {n:"Podcast con IA (guiones y edición)",prob:"Quieren crear contenido de audio profesional",urg:"Media",dem:"Media",comp:"Baja",pub:"Emprendedores, Coaches",tick:"$17-37",fmt:"Curso, Plantillas, Prompts"},
+  {n:"Finanzas personales con Excel/Sheets",prob:"No controlan sus gastos ni ahorran",urg:"Alta",dem:"Alta",comp:"Media",pub:"Adultos 22-45",tick:"$7-27",fmt:"Plantillas, Kit, Curso"},
+  {n:"E-commerce con Mercado Libre/Amazon",prob:"No saben vender en marketplaces",urg:"Media",dem:"Alta",comp:"Alta",pub:"Emprendedores 25-45",tick:"$17-57",fmt:"Curso, Ebook, Kit"},
+  {n:"Diseño de marca personal con IA",prob:"No tienen identidad visual profesional",urg:"Media",dem:"Media",comp:"Baja",pub:"Freelancers, Coaches 25-45",tick:"$9-37",fmt:"Kit, Plantillas, Curso"},
+  {n:"Generación de imágenes con IA (Midjourney/DALL·E)",prob:"Necesitan imágenes profesionales sin pagar",urg:"Media",dem:"Alta",comp:"Baja",pub:"Diseñadores, Creadores 20-40",tick:"$9-37",fmt:"Prompts, Curso, Kit"},
+  {n:"Contratos y documentos legales para freelancers",prob:"Trabajan sin protección legal",urg:"Alta",dem:"Media",comp:"Baja",pub:"Freelancers, Consultores",tick:"$9-27",fmt:"Kit, Ebook, Plantillas"},
+  {n:"Planificador de contenidos 90 días",prob:"No tienen sistema para publicar consistentemente",urg:"Alta",dem:"Alta",comp:"Baja",pub:"Creadores, Emprendedores",tick:"$7-17",fmt:"Plantillas, Kit"},
+  {n:"Mentoría y coaching con IA",prob:"No saben crear su programa de mentoría",urg:"Media",dem:"Media",comp:"Baja",pub:"Coaches, Consultores 28-50",tick:"$17-67",fmt:"Curso, Plantillas, Membresía"}
+];
+
+const top10 = [
+  {pos:1,name:"Prompts de IA para creadores de contenido",why:"Máxima demanda, mínima competencia, se crea en 1-2 días, costo $0, fácil de escalar",score:98},
+  {pos:2,name:"TikTok sin mostrar el rostro (curso)",why:"Tendencia explosiva, muchos principiantes buscan esto, producto aspiracional con alta conversión",score:95},
+  {pos:3,name:"Kit de plantillas Canva para emprendedores",why:"Rápido de crear, muy visual, se vende solo con capturas de pantalla, recurrente",score:92},
+  {pos:4,name:"Copywriting con IA: el método AIDA+GPT",why:"Urgencia real, se crea con prompts, aplica a cualquier nicho, alto ticket percibido",score:90},
+  {pos:5,name:"Planificador de contenidos 90 días en Notion",why:"Problema universal, producto tangible, compra impulsiva de bajo ticket, fácil de crear",score:88},
+  {pos:6,name:"Automatización con n8n para freelancers",why:"Nicho poco atendido en español, problema costoso de tiempo, diferenciador fuerte",score:85},
+  {pos:7,name:"ChatGPT para hacer el trabajo en 10 minutos",why:"Promesa concreta, emoción de productividad, se vende con demos de video cortos",score:83},
+  {pos:8,name:"YouTube automatizado con IA (sin grabar)",why:"Búsqueda masiva en Google y TikTok, monetización atractiva, audiencia hambrienta",score:80},
+  {pos:9,name:"Kit legal para freelancers (contratos y más)",why:"Urgencia legal real, nicho desatendido, precio bajo/medio, compra inmediata",score:77},
+  {pos:10,name:"Generador de imágenes IA: 500 prompts premium",why:"Evergreen, útil para todos los nichos, gran volumen de búsqueda, bajo esfuerzo",score:74}
+];
+
+const products = [
+  {
+    name:"🔥 PromptsVIP: 300 prompts para crear contenido viral",
+    includes:"300 prompts organizados por categoría (TikTok, Instagram, email, ventas, respuestas a clientes), guía de uso, 20 prompts bonus para nichos",
+    price:"$17 – $27",
+    time:"2-3 días",
+    tools:"ChatGPT (gratis), Google Docs, Canva, Gumroad o Hotmart",
+    delivery:"PDF entregado automáticamente por Hotmart al pagar. Página de ventas con Canva + enlace directo.",
+    diff:"Prompts específicos para LATAM, con contexto cultural, listos para copiar y pegar"
+  },
+  {
+    name:"🎬 TikTok Invisible: gana dinero sin mostrar tu cara",
+    includes:"Módulo 1: estructura de cuenta, Módulo 2: nichos sin rostro, Módulo 3: herramientas gratis, Módulo 4: monetización, 10 guiones de video de ejemplo",
+    price:"$37 – $57",
+    time:"5-7 días",
+    tools:"Loom o Canva Presentaciones para grabar pantalla, Google Docs, Hotmart",
+    delivery:"Acceso a área de miembros Hotmart con videos + PDFs automáticos",
+    diff:"Enfocado en LATAM, ejemplos reales del mercado hispano, sin inglés"
+  },
+  {
+    name:"🎨 CanvaKit Negocio: 200 plantillas listas para vender",
+    includes:"200 plantillas Canva (posts, stories, carruseles, portadas), instrucciones de personalización, paletas de colores por nicho, 30 plantillas bonus de emails",
+    price:"$17 – $37",
+    time:"3-5 días",
+    tools:"Canva gratis, Google Drive para entregar el enlace, Hotmart",
+    delivery:"Enlace compartible de Canva entregado automáticamente al comprar",
+    diff:"Organizadas por industria: coaches, restaurantes, tiendas, servicios"
+  },
+  {
+    name:"✍️ CopyAI: escribe textos que venden en 5 minutos",
+    includes:"Ebook de 40 páginas con método AIDA+GPT, 50 prompts de copywriting, 15 plantillas de scripts para videos de venta, ejemplos reales",
+    price:"$17 – $27",
+    time:"3-4 días",
+    tools:"ChatGPT, Canva para portada, Google Docs, Hotmart",
+    delivery:"PDF automático al pagar + acceso a grupo de Telegram de soporte",
+    diff:"Casos de uso reales en español para venta de servicios y productos digitales"
+  },
+  {
+    name:"📅 ContentOS: planificador 90 días en Notion",
+    includes:"Template Notion con calendario editorial 90 días, banco de ideas por categoría, rastreador de métricas, guía de uso en video (10 min)",
+    price:"$9 – $17",
+    time:"1-2 días",
+    tools:"Notion (gratis), Loom para el video tutorial, Hotmart",
+    delivery:"Enlace de duplicación de Notion entregado al instante por Hotmart",
+    diff:"Incluye ideas de contenido precargadas para los 30 primeros días"
+  },
+  {
+    name:"⚙️ AutoFreelance: 10 automatizaciones con n8n",
+    includes:"10 flujos de n8n listos para importar (facturación, seguimiento de clientes, recordatorios, reportes), guía de instalación, video por cada flujo",
+    price:"$37 – $67",
+    time:"7-10 días",
+    tools:"n8n (plan gratis), Loom para tutoriales, Hotmart",
+    delivery:"Archivos JSON importables + videos de Loom privados",
+    diff:"El único producto en español con flujos n8n reales para freelancers hispanos"
+  },
+  {
+    name:"🤖 GPT10: haz tu trabajo en 10 minutos con IA",
+    includes:"Guía de 35 páginas con 7 casos de uso concretos, 100 prompts por profesión (marketing, contabilidad, ventas, diseño), videos de pantalla de 3 min cada uno",
+    price:"$17 – $37",
+    time:"4-5 días",
+    tools:"ChatGPT gratis, Canva, Loom, Hotmart",
+    delivery:"Área de miembros Hotmart con acceso permanente",
+    diff:"Casos de uso por profesión, no genérico. Resultados en minutos, no teoría"
+  },
+  {
+    name:"📹 YouTubeAI: crea canal monetizable sin grabar",
+    includes:"Curso de 4 módulos: nicho, scripts con IA, generación de voz, edición con CapCut, estrategia de SEO, calendario de publicación",
+    price:"$37 – $67",
+    time:"7-10 días",
+    tools:"ElevenLabs (gratis), CapCut (gratis), ChatGPT, Canva, Hotmart",
+    delivery:"Área de miembros Hotmart, actualizaciones incluidas",
+    diff:"Sistema paso a paso para el mercado hispanohablante con nichos rentables identificados"
+  },
+  {
+    name:"⚖️ FreelancerSafe: pack legal completo",
+    includes:"5 contratos editables (servicios, confidencialidad, cesión de derechos, propuesta, anticipo), guía de uso, checklist de negociación, calculadora de tarifas",
+    price:"$9 – $17",
+    time:"2-3 días",
+    tools:"Google Docs, Canva para portada del kit, Hotmart",
+    delivery:"ZIP con todos los documentos + PDF guía, entrega automática Hotmart",
+    diff:"Adaptados a México, Colombia, Argentina, Chile, Perú. No solo España"
+  },
+  {
+    name:"🖼️ AIimages500: 500 prompts de imágenes IA listas",
+    includes:"500 prompts organizados para Midjourney, DALL·E y Leonardo AI, por categoría (negocio, lifestyle, abstracto, productos), guía de estilo, 50 prompts bonus",
+    price:"$9 – $17",
+    time:"2-3 días",
+    tools:"ChatGPT para generar prompts, Google Docs, Canva, Hotmart",
+    delivery:"PDF + Notion database con todos los prompts, entrega automática",
+    diff:"Prompts con instrucciones en español con ejemplos de resultado incluidos"
+  }
+];
+
+const marketing = [
+  {
+    name:"PromptsVIP",
+    tiktok: [
+      "Muestra 5 prompts que generan dinero (texto en pantalla)",
+      "Antes/después: respuesta sin prompt vs. con prompt profesional",
+      "\"3 prompts que uso para ganar $500 al mes\" — pantalla de ChatGPT",
+      "Error más común al usar ChatGPT (texto animado + voz IA)",
+      "Muestra cuánto tardas en crear un post de Instagram con un prompt",
+      "Top 5 prompts para creadores de contenido (carrusel en video)",
+      "\"Lo que nadie te enseña de ChatGPT\" — demo en pantalla",
+      "Genera un email de ventas en 30 segundos — video de pantalla",
+      "Prompt para crear un mes de contenido en 10 minutos",
+      "\"Gana tiempo libre con estos prompts\" — comparativa de tiempo",
+      "Prompt para responder DMs profesionalmente — demo",
+      "5 prompts para captions de Instagram virales",
+      "Genera una estrategia de negocio con un prompt — pantalla",
+      "\"¿Pagas diseñador? Usa esto mejor\" — prompts para Canva + IA",
+      "Prompt que reemplaza 2 horas de trabajo",
+      "Crea un guion de TikTok con IA en 3 minutos — en vivo",
+      "\"Así uso IA para crear contenido toda la semana el domingo\"",
+      "El prompt perfecto para hacer investigación de mercado",
+      "5 prompts para escribir textos de ventas que convierten",
+      "Responde comentarios negativos de clientes con IA — demo"
+    ],
+    gancho: "🚨 Para si usas ChatGPT todos los días y aún tardas horas...",
+    narracion: "Si todavía escribes cada post, cada email y cada respuesta de cero... estás perdiendo tiempo que podrías estar usando para crecer. Hoy te muestro cómo los creadores que generan ingresos reales usan prompts específicos para automatizar su contenido. No son trucos. Son sistemas. Y yo los tengo listos para ti.",
+    cta: "👇 El pack de 300 prompts está en el enlace de mi bio",
+    hashtags: "#ChatGPT #PromptsIA #ContentCreator #MarketingDigital #TikTokLatam #EmprendimientoDigital #IAParaNegocios",
+    reels: [
+      "Carrusel de los 5 prompts más compartidos",
+      "Story interactiva: ¿Cuánto tardas en escribir un post?",
+      "Reel de transformación: antes/después con prompt",
+      "Tutorial de 30 seg: cómo usar un prompt de ventas",
+      "Comparativa: prompt gratis vs. prompt profesional",
+      "\"Un domingo con IA\" — rutina de contenido",
+      "Poll: ¿Cuánto pagarías por 300 prompts?",
+      "Demo: genera un guion de video en tiempo real",
+      "Repost de resultado de un cliente ficticio",
+      "Cuenta regresiva de lanzamiento con preview del producto",
+      "\"3 errores usando ChatGPT\" — educativo",
+      "Tutorial: cómo instalar GPT para tu negocio",
+      "Resultado de usar prompts 30 días",
+      "\"Esto es lo que no te cuentan de la IA\"",
+      "Collage de prompts del pack — show, don't tell",
+      "Caso de uso: coach que ahorra 5 horas semanales",
+      "Prompt challenge: pruébalo y etiquétame",
+      "Reels de preguntas frecuentes del producto",
+      "Breakdown de lo que incluye el pack",
+      "\"Vendí mi primer pack digital con esto\" — historia"
+    ],
+    carruseles: [
+      {title:"5 prompts que cambian tu negocio esta semana", slides:["Portada impactante","Prompt #1 + ejemplo","Prompt #2 + ejemplo","Prompt #3 + ejemplo","Prompt #4 + ejemplo","Prompt #5 + ejemplo","CTA: consigue los 300 en mi bio"]},
+      {title:"Cómo uso IA para crear contenido de lunes a domingo",slides:["Portada: mi semana con IA","Lunes: prompts de ideas","Martes: escribir posts","Miércoles: emails","Jueves: respuestas","Viernes: análisis","CTA"]},
+      {title:"Los errores que te hacen perder tiempo con ChatGPT",slides:["Portada","Error 1","Error 2","Error 3","La solución","CTA"]},
+    ]
+  }
+];
+
+const automation = [
+  {step:1, title:"El usuario ve el video (TikTok / Instagram)", tools:["TikTok gratis","Instagram gratis","CapCut para editar (gratis)"], tip:"El video tiene CTA claro: 'enlace en bio'"},
+  {step:2, title:"Entra al perfil y hace clic en el enlace", tools:["Linktree gratis","Beacons.ai gratis","Bio de Instagram"], tip:"El link de bio apunta a tu página de ventas"},
+  {step:3, title:"Llega a la página de ventas", tools:["Hotmart (incluye landing gratis)","Canva para imágenes","ChatGPT para el copy"], tip:"Página sencilla: problema → solución → precio → botón"},
+  {step:4, title:"Compra el producto en Hotmart", tools:["Hotmart (0% comisión los primeros $10k USD)","Acepta tarjeta, PIX, OXXO, PayPal"], tip:"Hotmart maneja el carrito, el cobro y la factura"},
+  {step:5, title:"Recibe el producto automáticamente", tools:["Hotmart entrega el archivo o acceso instantáneo","Email automático de bienvenida incluido"], tip:"Configura una sola vez, funciona 24/7"},
+  {step:6, title:"Recupera carritos abandonados", tools:["Hotmart tiene seguimiento de abandono gratis","Brevo para emails automáticos (gratis hasta 300/día)"], tip:"El 40% de los compradores necesitan 2-3 contactos"}
+];
+
+const plan = [
+  {week:"Semana 1: Fundación (días 1-7)", goal:"Crear el producto y el canal",days:[
+    {d:"D1",task:"Decide el nicho y el producto. Abre cuenta en Hotmart y TikTok"},
+    {d:"D2",task:"Crea el producto con ChatGPT + Google Docs (prompts, ebook o plantillas)"},
+    {d:"D3",task:"Diseña la portada en Canva. Escribe el copy de ventas con IA"},
+    {d:"D4",task:"Sube el producto a Hotmart. Configura la entrega automática"},
+    {d:"D5",task:"Crea tu bio de TikTok e Instagram. Configura Linktree"},
+    {d:"D6",task:"Graba 3 videos de TikTok (pantalla + voz IA). Programa con Buffer"},
+    {d:"D7",task:"Publica 1 carrusel en Instagram. Analiza métricas iniciales"},
+  ]},
+  {week:"Semana 2: Tracción (días 8-14)", goal:"Publicar consistentemente y probar mensajes",days:[
+    {d:"D8",task:"2 TikToks + 1 Reel. Enfócate en 1 gancho diferente por video"},
+    {d:"D9",task:"Responde todos los comentarios. Crea 1 carrusel educativo"},
+    {d:"D10",task:"2 TikToks. Prueba el hook '¿Sabías que...?'"},
+    {d:"D11",task:"1 Reel + Story con encuesta (¿Usas IA para tu negocio?)"},
+    {d:"D12",task:"2 TikToks de antes/después. El más efectivo para conversión"},
+    {d:"D13",task:"Analiza cuál video tuvo más views. Repite el formato"},
+    {d:"D14",task:"1 carrusel de objeciones ('¿Por qué comprar?'). Meta: 1 venta"},
+  ]},
+  {week:"Semana 3: Optimización (días 15-21)", goal:"Escalar lo que funciona. Meta: 5-10 ventas",days:[
+    {d:"D15",task:"3 TikToks. Reusa los hooks ganadores con nuevo contenido"},
+    {d:"D16",task:"Crea un segundo producto complementario (upsell bajo costo)"},
+    {d:"D17",task:"2 Reels + 1 carrusel de testimonios (puede ser tu propio resultado)"},
+    {d:"D18",task:"Live de TikTok mostrando el uso del producto (sin rostro = pantalla)"},
+    {d:"D19",task:"3 TikToks. Empieza a usar hashtags de nicho más específicos"},
+    {d:"D20",task:"Email a tu lista (si ya tienes) con oferta de tiempo limitado"},
+    {d:"D21",task:"Analiza: ¿Qué tipo de contenido genera más clics al enlace?"},
+  ]},
+  {week:"Semana 4: Escala (días 22-30)", goal:"Sistematiza y escala hacia $500/mes",days:[
+    {d:"D22",task:"Crea 5 videos en batch para la próxima semana. Graba todo en 2h"},
+    {d:"D23",task:"Prueba TikTok Ads con $5/día en el video con más vistas orgánicas"},
+    {d:"D24",task:"3 TikToks + 1 Reel de lanzamiento de tu segundo producto"},
+    {d:"D25",task:"Configura respuestas automáticas en Instagram DMs con ManyChat"},
+    {d:"D26",task:"Publica caso de éxito real o simulado para generar prueba social"},
+    {d:"D27",task:"3 TikToks enfocados en urgencia ('solo hasta el domingo')"},
+    {d:"D28",task:"Email de cierre de mes con oferta especial"},
+    {d:"D29",task:"Analiza ventas totales del mes. ¿Qué funcionó? ¿Qué no?"},
+    {d:"D30",task:"Planifica el mes 2 con presupuesto para ads. Meta: $500+"},
+  ]}
+];
+
+function renderTable(data) {
+  const body = document.getElementById('marketBody');
+  body.innerHTML = data.map((s,i) => `
+    <tr data-dem="${s.dem}">
+      <td style="font-weight:500;color:var(--color-text-secondary)">${i+1}</td>
+      <td style="font-weight:500;min-width:140px">${s.n}</td>
+      <td style="min-width:160px;color:var(--color-text-secondary)">${s.prob}</td>
+      <td><span class="badge ${s.urg==='Alta'?'high':'med'}">${s.urg}</span></td>
+      <td><span class="badge ${s.dem==='Alta'?'high':'med'}">${s.dem}</span></td>
+      <td><span class="badge ${s.comp==='Baja'?'high':s.comp==='Media'?'med':'low'}">${s.comp}</span></td>
+      <td style="min-width:140px;color:var(--color-text-secondary)">${s.pub}</td>
+      <td style="font-weight:500;color:var(--accent-dark)">${s.tick}</td>
+      <td style="min-width:160px">${s.fmt.split(',').map(f=>`<span class="tag">${f.trim()}</span>`).join('')}</td>
+    </tr>`).join('');
+}
+
+function filterTable(dem) {
+  const rows = document.querySelectorAll('#marketBody tr');
+  rows.forEach(r => r.style.display = (dem==='all'||r.dataset.dem===dem)?'':'none');
+}
+
+function renderTop10() {
+  document.getElementById('top10Container').innerHTML = top10.map(t => `
+    <div class="card" style="display:flex;gap:14px;align-items:flex-start">
+      <span class="rank">${t.pos}</span>
+      <div style="flex:1">
+        <h3 style="margin:0 0 4px">${t.name}</h3>
+        <p class="meta">${t.why}</p>
+        <div style="margin-top:8px;display:flex;align-items:center;gap:8px">
+          <span style="font-size:12px;color:var(--color-text-secondary)">Potencial:</span>
+          <div style="flex:1;background:var(--color-background-secondary);border-radius:4px;height:6px;overflow:hidden">
+            <div style="width:${t.score}%;height:100%;background:var(--accent);border-radius:4px"></div>
+          </div>
+          <span style="font-size:12px;font-weight:500;color:var(--accent-dark)">${t.score}/100</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderProducts() {
+  document.getElementById('productosContainer').innerHTML = products.map((p,i) => `
+    <div style="margin-bottom:6px">
+      <button class="accordion-btn" onclick="toggleAcc(${i})">
+        <span><span class="rank">${i+1}</span>${p.name}</span>
+        <i class="ti ti-chevron-down" style="font-size:16px" aria-hidden="true"></i>
+      </button>
+      <div class="accordion-content" id="acc${i}">
+        <div class="grid2">
+          <div>
+            <div class="section-title">¿Qué incluye?</div>
+            <p>${p.includes}</p>
+            <div class="section-title">Precio ideal</div>
+            <div class="price-big">${p.price}</div>
+            <div class="section-title">Tiempo de creación</div>
+            <p>${p.time}</p>
+          </div>
+          <div>
+            <div class="section-title">Herramientas gratis</div>
+            <p>${p.tools}</p>
+            <div class="section-title">Entrega automática en Hotmart</div>
+            <p>${p.delivery}</p>
+            <div class="section-title">Diferenciador</div>
+            <p>${p.diff}</p>
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function toggleAcc(i) {
+  const el = document.getElementById('acc'+i);
+  el.classList.toggle('open');
+}
+
+let currentProduct = 0;
+function renderProductNav() {
+  const nav = document.getElementById('productNav');
+  nav.innerHTML = products.map((p,i) => `<button onclick="showProduct(${i})" id="pnav${i}" class="${i===0?'active':''}">${i+1}. ${p.name.split(':')[0]}</button>`).join('');
+}
+
+function showProduct(i) {
+  currentProduct = i;
+  document.querySelectorAll('#productNav button').forEach((b,j)=>b.classList.toggle('active',j===i));
+  renderMarketing(i);
+}
+
+function renderMarketing(idx) {
+  const m = marketing[0];
+  const prod = products[idx];
+  document.getElementById('marketingContainer').innerHTML = `
+    <div class="card">
+      <h3>${prod.name}</h3>
+      <div class="section-title">TikTok — 20 ideas de videos virales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0">
+        ${m.tiktok.map((v,i)=>`<div class="mini-card" style="padding:8px 10px"><span style="font-size:11px;color:var(--accent-dark);font-weight:500">#${i+1}</span> <span style="font-size:12px">${v}</span></div>`).join('')}
+      </div>
+      <div class="section-title">Gancho para los primeros 3 segundos</div>
+      <div class="script-box">${m.gancho}</div>
+      <div class="section-title">Texto completo para narración con voz IA</div>
+      <div class="script-box">${m.narracion}</div>
+      <div class="section-title">Llamado a la acción</div>
+      <div class="script-box">${m.cta}</div>
+      <div class="section-title">Instagram Reels — 20 ideas</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0">
+        ${m.reels.map((r,i)=>`<div class="mini-card" style="padding:8px 10px"><span style="font-size:11px;color:var(--accent-dark);font-weight:500">#${i+1}</span> <span style="font-size:12px">${r}</span></div>`).join('')}
+      </div>
+      <div class="section-title">Hashtags recomendados</div>
+      <div class="pill-list">${m.hashtags.split(' ').map(h=>`<span class="tag">${h}</span>`).join('')}</div>
+      <div class="section-title">Carruseles educativos — 10 ideas con estructura</div>
+      ${m.carruseles.map(c=>`
+        <div class="mini-card" style="margin:6px 0;padding:10px 14px">
+          <div style="font-weight:500;font-size:13px;margin-bottom:6px">${c.title}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">${c.slides.map((s,j)=>`<span style="font-size:11px;background:var(--accent-light);color:var(--accent-dark);padding:2px 8px;border-radius:10px">Slide ${j+1}: ${s}</span>`).join('')}</div>
+        </div>`).join('')}
+      <div class="highlight-box" style="margin-top:12px"><p>💡 Para productos 2-10: la misma estructura se adapta. Ajusta el gancho al problema específico del producto. El 80% del contenido es reutilizable.</p></div>
+    </div>`;
+}
+
+function renderAuto() {
+  document.getElementById('autoContainer').innerHTML = automation.map(a => `
+    <div class="step">
+      <div class="step-num">${a.step}</div>
+      <div class="step-body" style="flex:1">
+        <h4>${a.title}</h4>
+        <p>${a.tip}</p>
+        <div class="pill-list" style="margin-top:6px">${a.tools.map(t=>`<span class="tag"><i class="ti ti-check" style="font-size:11px;margin-right:3px" aria-hidden="true"></i>${t}</span>`).join('')}</div>
+      </div>
+    </div>`).join('') + `
+    <div class="highlight-box" style="margin-top:16px">
+      <p><strong>Costo total del sistema:</strong> $0 si usas el plan gratis de Hotmart + Brevo + Linktree + CapCut + Buffer. Hotmart cobra comisión solo cuando vendes.</p>
+    </div>`;
+}
+
+function renderPlan() {
+  document.getElementById('planContainer').innerHTML = plan.map(w => `
+    <div class="week">
+      <h4>${w.week}</h4>
+      <p style="font-size:12px;color:var(--accent-dark);margin:0 0 8px">🎯 Objetivo: ${w.goal}</p>
+      ${w.days.map(d=>`<div class="day-row"><span class="day-lbl">${d.d}</span><span style="color:var(--color-text-secondary)">${d.task}</span></div>`).join('')}
+    </div>`).join('') + `
+    <div class="card" style="margin-top:8px">
+      <h3>Metas de ventas semanales</h3>
+      <div class="grid2">
+        <div class="mini-card"><div class="num">1-3</div><div class="lbl">Semana 1 (validación)</div></div>
+        <div class="mini-card"><div class="num">5-10</div><div class="lbl">Semana 2 (tracción)</div></div>
+        <div class="mini-card"><div class="num">10-20</div><div class="lbl">Semana 3 (optimización)</div></div>
+        <div class="mini-card"><div class="num">20-30</div><div class="lbl">Semana 4 (escala)</div></div>
+      </div>
+    </div>`;
+}
+
+function renderFinal() {
+  document.getElementById('finalContainer').innerHTML = `
+    <div class="highlight-box" style="background:#EAF3DE;border-color:#639922;margin-bottom:16px">
+      <p style="color:#3B6D11;font-size:15px;font-weight:500">🏆 La mejor oportunidad para empezar desde cero en menos de 30 días:</p>
+    </div>
+    <div class="card" style="border:2px solid var(--accent)">
+      <h3 style="font-size:18px">🔥 PromptsVIP: Pack de 300 Prompts para Creadores</h3>
+      <div class="grid2" style="margin:12px 0">
+        <div>
+          <div class="section-title">¿Por qué este producto?</div>
+          <div class="step"><div class="step-num" style="width:22px;height:22px;font-size:11px">1</div><div class="step-body"><h4 style="font-size:13px">Cero inversión</h4><p>Se crea con ChatGPT gratis. Costo: $0</p></div></div>
+          <div class="step"><div class="step-num" style="width:22px;height:22px;font-size:11px">2</div><div class="step-body"><h4 style="font-size:13px">Se crea en 2-3 días</h4><p>Un solo fin de semana es suficiente</p></div></div>
+          <div class="step"><div class="step-num" style="width:22px;height:22px;font-size:11px">3</div><div class="step-body"><h4 style="font-size:13px">100% desde el celular</h4><p>TikTok, CapCut, Canva, Hotmart: todo en mobile</p></div></div>
+          <div class="step"><div class="step-num" style="width:22px;height:22px;font-size:11px">4</div><div class="step-body"><h4 style="font-size:13px">Sin mostrar el rostro</h4><p>Videos de pantalla + voz generada con IA</p></div></div>
+          <div class="step"><div class="step-num" style="width:22px;height:22px;font-size:11px">5</div><div class="step-body"><h4 style="font-size:13px">Alta demanda, baja competencia</h4><p>El mercado hispano de prompts está apenas naciendo</p></div></div>
+        </div>
+        <div>
+          <div class="section-title">Proyección de ingresos</div>
+          <div class="mini-card" style="margin:6px 0"><div class="num" style="color:#3B6D11">Mes 1</div><div class="lbl">10-20 ventas × $17 = $170 – $340</div></div>
+          <div class="mini-card" style="margin:6px 0"><div class="num" style="color:#854F0B">Mes 2-3</div><div class="lbl">30-50 ventas/mes = $500 – $850</div></div>
+          <div class="mini-card" style="margin:6px 0"><div class="num" style="color:var(--accent-dark)">Mes 4-6</div><div class="lbl">Upsell + segundo producto = $1,000+</div></div>
+          <div class="section-title" style="margin-top:14px">Para escalar a $500/mes</div>
+          <p style="font-size:13px;color:var(--color-text-secondary)">Publica 2 TikToks diarios + 1 reel. Con 30K-50K vistas orgánicas, el 1-2% compra a $17.</p>
+          <div class="section-title">Para escalar a $1,000/mes</div>
+          <p style="font-size:13px;color:var(--color-text-secondary)">Agrega un curso de $37 como upsell y una membresía mensual de $9 con prompts nuevos. 3 productos = 3 fuentes de ingreso.</p>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <p>La razón profunda: en LATAM hay millones de emprendedores que ya usan ChatGPT pero no saben cómo explotarlo. El dolor es real, el precio es accesible, la solución es tangible y entregable en segundos. Es el producto perfecto para comenzar con $0 de inversión y validar en menos de 2 semanas.</p>
+      </div>
+    </div>`;
+}
+
+function showPhase(i) {
+  document.querySelectorAll('.phase').forEach((p,j)=>p.classList.toggle('active',j===i));
+  document.querySelectorAll('#mainNav button').forEach((b,j)=>b.classList.toggle('active',j===i));
+}
+
+renderTable(services);
+renderTop10();
+renderProducts();
+renderProductNav();
+renderMarketing(0);
+renderAuto();
+renderPlan();
+renderFinal();
+</script>
